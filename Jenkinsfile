@@ -17,9 +17,10 @@ stages {
 post {
     success {
         emailext(
-            to: 'bhawanirajsinghranawat@gmail.com',
+            to: '${DEFAULT_RECIPIENTS}',
             subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
             body: """
+```
 
 Build Successful
 
