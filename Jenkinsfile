@@ -1,7 +1,6 @@
 pipeline {
 agent any
 
-```
 stages {
     stage('Build') {
         steps {
@@ -20,7 +19,6 @@ post {
         emailext(
             subject: "SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
             body: """
-```
 
 Build Successful
 
@@ -31,12 +29,10 @@ Build URL: ${env.BUILD_URL}
 )
 }
 
-```
     failure {
         emailext(
             subject: "FAILED: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
             body: """
-```
 
 Build Failed
 
